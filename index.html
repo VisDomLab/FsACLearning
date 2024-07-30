@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Page</title>
+    <title>Project Page for Accepted Paper</title>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <style>
 
@@ -48,11 +48,26 @@
             vertical-align: super;
         }
 
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .headline {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            animation: blink 1s infinite;
+            margin: 20px 0;
+        }
+
         nav.navigation {
             background: #50b3a2;
             padding: 10px 0;
             border-bottom: 1px solid #e0e0e0;
-            width: 100%;
+            width: 103%;
         }
 
         nav.navigation ul {
@@ -119,22 +134,51 @@
 
         /* Styling for the Abstract section */
         #abstract {
-            font-family: 'Georgia', serif; 
-            color: #555555; 
-            font-weight: 300; 
+            font-family: 'Georgia', serif; /* Change to your preferred font family */
+            color: #555555; /* Lighter text color */
+            font-weight: 300; /* Lighter font weight */
         }
 
-        /* Styling for the Citations section */
-        #citations pre {
+        /* Citation section */
+        #citation{
+            text-align: left;
             background: #f5f5f5;
             padding: 15px;
             border: 1px solid #e0e0e0;
-            border-radius: 8px;
+            border-radius: 10px;
             font-family: 'Courier New', Courier, monospace;
-            white-space: pre-wrap; 
-            word-wrap: break-word; 
+            max-width: 600px;
         }
 
+        #citation h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .citation-content {
+            font-size: 14px;
+            color: #333;
+            text-align: left;
+        }
+
+        .citation-note {
+            color: #555555; /* Change text color to grey */
+            font-family: 'Georgia', serif; /* Change font family to Georgia */
+            font-weight: 400; /* Increase font weight */
+        }
+
+        .citation-bibtex {
+            font-family: 'Courier New', monospace;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+            text-align: left;
+            margin: 0; /* Center the box */
+            width: auto; /* Shrink the box to fit content */
+            max-width: 100%; /* Ensure it doesn't overflow the container */
+            white-space: pre-line;
+        }
         /* Flexbox styling for side-by-side sections */
         .side-by-side {
             display: flex;
@@ -151,8 +195,8 @@
         }
 
         .download-image-container img {
-            width: 250px; 
-            height: auto; 
+            width: 250px; /* Set the desired width */
+            height: auto; /* Maintain aspect ratio */
             border: 4px solid #1dcde800;
             border-radius: 4px;
         }
@@ -165,7 +209,7 @@
             margin-right: 8px;
         }
 
-        #code a {
+        #resources a, #dataset a {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -178,12 +222,11 @@
             text-align: left
         }
 
-        /* #contact p {
-            font-family: 'Georgia', serif; 
-            color: #555555; 
-            font-weight: 300; 
-        } */
-
+        /* #contact p { */
+           /* font-family: 'Georgia', serif; Change to your preferred font family */
+            /* color: #555555; Lighter text color */
+            /* font-weight: 300; Lighter font weight */
+        /* } */
         #contact p {
             text-align: center;
             font-family: 'Georgia', serif;
@@ -202,6 +245,7 @@
         #contact img:hover {
             transform: scale(1.1);
         }
+
 
     </style>
 </head>
@@ -227,6 +271,11 @@
             <li><a href="#contact">Connect</a></li>
         </ul>
     </nav>
+
+    <!-- Headline -->
+    <div class="headline">
+        Accepted in INTERSPEECH 2024!
+    </div>
     
     <main class="container">
         <section id="abstract">
@@ -250,7 +299,7 @@
             <section id="download">
                 <h2>Download</h2>
                 <div class="download-image-container">
-                    <a href="FsAC_Learning.pdf" download>
+                    <a href="https://arxiv.org/abs/2407.19265" download>
                         <img src="images\FsAC_Learning_page-0001.jpg" alt="Download Paper (PDF)">
                     </a>
                 </div>
@@ -272,22 +321,25 @@
                 </ul>
             </section>
         </div>
-        <section id="citation">
-            <h2>Cite us</h2>
-            <!-- <pre>
-                @inproceedings{author2024title,
-                    author    = {Riyansha Singh and Parinita Nema and Vinod K Kurmi},
-                    title     = {Towards Robust Few-shot Class Incremental Learning in Audio Classification
-                        using Contrastive Representation},
-                    booktitle = {Proceedings of the INTERSPEECH},
-                    year      = {2024},
-                    publisher = {{ISCA}},
-                    address   = {Kos, Greece}
-                }
-            </pre> -->
-        </section>
-        
-        <section id="contact">
+        <section id ="Citation">
+            <h2>Citation</h2>
+            <div class="citation-content">
+                <p class="citation-note">If you use this work, please cite:</p>
+                <pre class="citation-bibtex">
+                    @misc{singh2024robustfewshotclassincremental,
+                        title={Towards Robust Few-shot Class Incremental Learning in Audio Classification using Contrastive Representation}, 
+                        author={Riyansha Singh and Parinita Nema and Vinod K Kurmi},
+                        year={2024},
+                        eprint={2407.19265},
+                        archivePrefix={arXiv},
+                        primaryClass={cs.SD},
+                        url={https://arxiv.org/abs/2407.19265}, 
+                    }
+                
+                </pre>
+            </div>
+        </div>
+                <section id="contact">
             <h2>Connect</h2>
             <!-- <h2>Contact</h2> -->
             <p>Drop a query at  
